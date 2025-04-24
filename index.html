@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booksorter</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Lexend:wght@100..900&display=swap');
+      * {
+        font-family: 'Lexend', sans-serif;
+        font-weight: 300;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Booksorter</h1>
+    <div id="books" style="background-color: lightgray; margin-bottom: 4vh;padding-top: 2vh;padding-bottom: 2vh;padding-left: 2vw;padding-right: 2vw;"></div>
+    <input placeholder="BOOK TITLE" id="book">
+    <button onclick="addBook()">+</button>
+    <script>
+      const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+      const booksList = []
+      function addBook() {
+        const bookInput = document.getElementById("book")
+        booksList.push(bookInput.value)
+        bookInput.value = ""
+        sortBooksAndDisplay()
+      }
+      function sortBooksAndDisplay() {
+        document.getElementById("books").innerHTML = ""
+        booksList.sort()
+        for (let i = 0; i < booksList.length; i++) {
+          const bookElement = document.createElement("p")
+          bookElement.style.margin = "0"
+          bookElement.style.paddingLeft = "3vw"
+          const color = (booksList.indexOf(booksList[i][0].toUpperCase()/alphabet.length).toString()+"%"
+          bookElement.style.backgroundColor = "hsl("+color+", 50%, 50%)"
+          bookElement.innerHTML = booksList[i].toUpperCase()
+          bookElement.cl
+          document.getElementById("books").appendChild(bookElement)
+        }
+        
+        //SORT BOOKS AND COLOR CODE THEM LATER IN RAINBOW FOR LATER IN ALPHABET
+      }
+    </script>
+  </body>
+</html>
