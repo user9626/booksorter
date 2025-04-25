@@ -1,0 +1,3 @@
+- test and edit new button style
+- check if button deletion works and make it also remove reference from booksList
+- make enter work for submitting book name
