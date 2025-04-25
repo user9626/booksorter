@@ -29,11 +29,12 @@
         document.getElementById("books").innerHTML = ""
         booksList.sort()
         for (let i = 0; i < booksList.length; i++) {
-          const bookElement = document.createElement("p")
+          const bookElement = document.createElement("button")
+          bookElement.style.display = "block"
           bookElement.style.margin = "0"
           bookElement.style.paddingLeft = "3vw"
+          bookElement.addEventListener("click", () => bookElement.remove())
           const color = (alphabet.indexOf(booksList[i][0].toUpperCase())/alphabet.length*360).toString()
-          p("hsl("+color+", 50%, 50%)")
           bookElement.style.backgroundColor = "hsl("+color+", 50%, 50%)"
           bookElement.innerHTML = booksList[i].toUpperCase()
           document.getElementById("books").appendChild(bookElement)
