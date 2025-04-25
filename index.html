@@ -36,14 +36,12 @@
           const bookElement = document.createElement("p")
           bookElement.style.margin = "0"
           bookElement.style.paddingLeft = "3vw"
-          const color = (alphabet.indexOf(booksList[i][0].toUpperCase())/alphabet.length).toString()+"%"
-          p(booksList[i].toUpperCase())
-          bookElement.style.backgroundColor = green//"hsl("+color+", 50%, 50%)"
+          const color = (alphabet.indexOf(booksList[i][0].toUpperCase())/alphabet.length*360).toString()
+          p("hsl("+color+", 50%, 50%)")
+          bookElement.style.backgroundColor = "hsl("+color+", 50%, 50%)"
           bookElement.innerHTML = booksList[i].toUpperCase()
           document.getElementById("books").appendChild(bookElement)
         }
-        
-        //SORT BOOKS AND COLOR CODE THEM LATER IN RAINBOW FOR LATER IN ALPHABET
       }
     </script>
   </body>
