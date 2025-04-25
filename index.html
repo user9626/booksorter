@@ -15,9 +15,7 @@
     <div id="books" style="background-color: lightgray; margin-bottom: 4vh;padding-top: 2vh;padding-bottom: 2vh;padding-left: 2vw;padding-right: 2vw;"></div>
     <input placeholder="BOOK TITLE" id="book">
     <button onclick="addBook()">+</button>
-    <p id="debug"></p>
     <script>
-      p = (str) => document.getElementById("debug").innerHTML = str
       const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
       const booksList = []
       function addBook() {
@@ -28,10 +26,8 @@
         sortBooksAndDisplay()
       }
       function sortBooksAndDisplay() {
-        p("sorting")
         document.getElementById("books").innerHTML = ""
         booksList.sort()
-        p("adding books")
         for (let i = 0; i < booksList.length; i++) {
           const bookElement = document.createElement("p")
           bookElement.style.margin = "0"
