@@ -22,6 +22,7 @@
       const booksList = []
       function addBook() {
         const bookInput = document.getElementById("book")
+        if (alphabet.indexOf(bookInput.value[0].toUpperCase()) == (-1)) { return }
         booksList.push(bookInput.value)
         bookInput.value = ""
         sortBooksAndDisplay()
@@ -35,7 +36,7 @@
           const bookElement = document.createElement("p")
           bookElement.style.margin = "0"
           bookElement.style.paddingLeft = "3vw"
-          const color = booksList.indexOf(booksList[i][0].toUpperCase()/alphabet.length).toString()+"%"
+          const color = (alphabet.indexOf(booksList[i][0].toUpperCase())/alphabet.length).toString()+"%"
           p(booksList[i].toUpperCase())
           p(color)
           bookElement.style.backgroundColor = "hsl("+color+", 50%, 50%)"
