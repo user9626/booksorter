@@ -34,7 +34,7 @@
       })
       function addBook() {
         const bookInput = document.getElementById("book")
-        if (alphabet.indexOf(bookInput.value[0].toUpperCase()) == (-1)) { return }
+        if (alphabet.indexOf(bookInput.value[0].toUpperCase()) == (-1)) { bookInput.value = ""; return }
         booksList.push(bookInput.value)
         bookInput.value = ""
         sortBooksAndDisplay()
@@ -44,13 +44,13 @@
         booksList.sort()
         for (let i = 0; i < booksList.length; i++) {
           const bookElement = document.createElement("button")
-          bookElement.style.cssText = "display: block;margin: 0;padding-left: 3vw;padding-right: 3vw;font-weight: bold;border: none;transition: background-color 0.3s;box-shadow: 0 0 3px black;";
+          bookElement.style.cssText = "display: block;margin: 0;padding-left: 3vw;padding-right: 3vw;font-weight: bold;border: none;transition: background-color 0.3s;box-shadow: 0 0 3px black;font-size: 30px;";
           bookElement.addEventListener("mouseover", () => {
-            bookElement.style.backgroundColor = "hsl("+color+", 50%, 40%)";
+            bookElement.style.backgroundColor = "hsl("+color+", 50%, 50%)";
             bookElement.style.border = "2px solid black";
           });
           bookElement.addEventListener("mouseout", () => {
-            bookElement.style.backgroundColor = "hsl("+color+", 50%, 50%)";
+            bookElement.style.backgroundColor = "hsl("+color+", 50%, 60%)";
             bookElement.style.border = "0";
           });
           bookElement.addEventListener("click", () => {
@@ -59,7 +59,7 @@
             sortBooksAndDisplay()
           })
           const color = (alphabet.indexOf(booksList[i][0].toUpperCase())/alphabet.length*360).toString()
-          bookElement.style.backgroundColor = "hsl("+color+", 50%, 50%)"
+          bookElement.style.backgroundColor = "hsl("+color+", 50%, 60%)"
           bookElement.innerHTML = booksList[i].toUpperCase()
           document.getElementById("books").appendChild(bookElement)
         }
