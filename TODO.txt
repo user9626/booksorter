@@ -1,0 +1,1 @@
+- make book tags/names bigger and easier to see
